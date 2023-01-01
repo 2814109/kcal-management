@@ -5,6 +5,7 @@ import {
   Text,
   View,
   StyleSheet,
+  KeyboardTypeOptions,
 } from "react-native";
 
 import {
@@ -21,12 +22,14 @@ interface Props extends TextInputProps {
   defaultValue?: any;
   label: string;
   autoCompleteType: string;
+  keyboardType: KeyboardTypeOptions;
 }
 
 export const InputComponent: React.FC<Props> = ({
   control,
   areaName,
   defaultValue,
+  keyboardType,
   ...props
 }) => {
   return (
@@ -44,7 +47,7 @@ export const InputComponent: React.FC<Props> = ({
             value={value}
             onBlur={onBlur}
             onChangeText={onChange}
-            keyboardType="numeric"
+            keyboardType={keyboardType}
           />
           {errors[name] && (
             <Text style={styles.text}>

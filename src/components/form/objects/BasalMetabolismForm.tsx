@@ -31,6 +31,7 @@ const BasalMetabolismForm = () => {
         autoCompleteType="hightOfBody"
         autoCapitalize="none"
         style={styles.input}
+        keyboardType="numeric"
       />
       <InputComponent
         control={control as unknown as Control<FieldValues>}
@@ -40,6 +41,7 @@ const BasalMetabolismForm = () => {
         autoCompleteType="bodyWeight"
         autoCapitalize="none"
         style={styles.input}
+        keyboardType="numeric"
       />
 
       <InputComponent
@@ -50,6 +52,7 @@ const BasalMetabolismForm = () => {
         autoCompleteType="age"
         autoCapitalize="none"
         style={styles.input}
+        keyboardType="numeric"
       />
       <Pressable
         style={styles.button}
