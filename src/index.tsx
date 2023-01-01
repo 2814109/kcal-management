@@ -1,13 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import InputItem from "./components/form/InputItem";
+import BasalMetabolismForm from "./components/form/objects/BasalMetabolismForm";
 const Main = () => {
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app</Text>
       <StatusBar style="auto" />
-      <InputItem />
-      <InputItem />
+      <BasalMetabolismForm />
     </View>
   );
 };
