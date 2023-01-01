@@ -1864,6 +1864,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^2.9.10":
+  version: 2.9.10
+  resolution: "@hookform/resolvers@npm:2.9.10"
+  peerDependencies:
+    react-hook-form: ^7.0.0
+  checksum: ae3395372d6ff11506a72bb6b3c57046bd14b457c2fe1f0485f60cf2dba0ef4484e3a2fb5a0f6a217f6d701393ebc3683a2ede7c81c6f13e71f965f520c7af16
+  languageName: node
+  linkType: hard
+
 "@jest/create-cache-key-function@npm:^29.0.3":
   version: 29.3.1
   resolution: "@jest/create-cache-key-function@npm:29.3.1"
@@ -5864,6 +5873,7 @@ fsevents@^2.1.2:
   resolution: "kcal-management@workspace:."
   dependencies:
     "@babel/core": ^7.12.9
+    "@hookform/resolvers": ^2.9.10
     "@react-native-async-storage/async-storage": ^1.17.11
     "@supabase/supabase-js": ^2.2.3
     "@types/react": ~18.0.14
@@ -5878,6 +5888,7 @@ fsevents@^2.1.2:
     react-native-url-polyfill: ^1.3.0
     react-native-web: ~0.18.9
     typescript: ^4.6.3
+    zod: ^3.20.2
   languageName: unknown
   linkType: soft
 
@@ -9720,5 +9731,12 @@ typescript@^4.6.3:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.20.2":
+  version: 3.20.2
+  resolution: "zod@npm:3.20.2"
+  checksum: 04172f7e9350372684ccd298d4716908edc9113751295b6c4e1b3ea84e2af8997e504b33ba36f4741417bb2a5dc90bfd40501f6b0e7389df10e42a63d6d8366c
   languageName: node
   linkType: hard
