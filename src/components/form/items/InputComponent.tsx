@@ -40,13 +40,12 @@ export const InputComponent: React.FC<Props> = ({
       }) => (
         <View>
           <TextInput
-            // このpropsにautoCompleteTypeなど諸々乗っかってくる
             {...props}
-            value={value || ""}
+            value={value}
             onBlur={onBlur}
             onChangeText={onChange}
+            keyboardType="numeric"
           />
-          {/* バリエーションエラー表示 */}
           {errors[name] && (
             <Text style={styles.text}>
               {(errors[name] as DeepMap<FieldValues, FieldError>)?.message}
