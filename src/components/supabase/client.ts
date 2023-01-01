@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createClient } from "@supabase/supabase-js";
-import { isString } from "libs/isString";
+import { isString } from "libs/validationPattern/isString";
 const supabaseUrl = process?.env?.REACT_NATIVE_SUPABASE_URL;
 const supabaseAnonKey = process?.env?.REACT_NATIVE_SUPABASE_ANON_KEY;
 
