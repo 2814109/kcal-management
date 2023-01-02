@@ -7,7 +7,7 @@ import {
 } from "react-hook-form";
 import { BasalMetabolism } from "types/BasalMetabolism";
 import { View, Text, StyleSheet, Pressable } from "react-native";
-import { InputComponent } from "../items/InputComponent";
+import { InputComponent } from "../../items/InputComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { validationSchema } from "./validationSchema";
 

@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import BasalMetabolismForm from "./components/form/objects/BasalMetabolismForm";
+import BasalMetabolismForm from "./components/form/objects/BasalMetabolismForm/BasalMetabolismForm";
 const Main = () => {
   return (
     <View style={styles.container}>
