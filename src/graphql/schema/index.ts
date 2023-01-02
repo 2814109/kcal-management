@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from "../../__generated__";
 
 /** タスク一覧取得用クエリー */
 export const tasksQuery = gql(`

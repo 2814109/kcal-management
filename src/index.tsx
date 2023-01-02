@@ -1,13 +1,32 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+// import { StatusBar } from "expo-status-bar";
+import { TodoList } from "./components/list/TodoList";
+import { StyleSheet, View } from "react-native";
+import {
+  ApolloClient,
+  ApolloProvider,
+  createHttpLink,
+  InMemoryCache,
+} from "@apollo/client";
 import BasalMetabolismForm from "./components/form/objects/BasalMetabolismForm/BasalMetabolismForm";
+
+import { supabaseUrl } from "libs/foundation/supabase/const";
 const Main = () => {
+  const httpLink = createHttpLink({
+    uri: `${supabaseUrl}/graphql/v1`,
+  });
+  const apolloClient = new ApolloClient({
+    uri: `${supabaseUrl}/graphql/v1`,
+    link: httpLink,
+    cache: new InMemoryCache(),
+  });
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app</Text>
-      <StatusBar style="auto" />
-      <BasalMetabolismForm />
-    </View>
+    <ApolloProvider client={apolloClient}>
+      <View style={styles.container}>
+        <BasalMetabolismForm />
+        <TodoList />
+      </View>
+    </ApolloProvider>
   );
 };
 

@@ -5,19 +5,19 @@ import {
   SubmitHandler,
   SubmitErrorHandler,
 } from "react-hook-form";
-import { BasalMetabolism } from "types/BasalMetabolism";
+import { BasalMetabolism } from "src/types/BasalMetabolism";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { InputComponent } from "../../items/InputComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { validationSchema } from "./validationSchema";
-
+import { onSubmitBasalMetabolism } from "src/hooks/features/BasalMetabolismForm/action";
 const BasalMetabolismForm = () => {
   const { control, handleSubmit } = useForm<BasalMetabolism>({
     resolver: zodResolver(validationSchema),
     mode: "onSubmit",
   });
   const onSubmit: SubmitHandler<BasalMetabolism> = (data: any, e: any) =>
-    console.log(data, e);
+    onSubmitBasalMetabolism();
   const onError: SubmitErrorHandler<BasalMetabolism> = (errors: any, e: any) =>
     console.log(errors, e);
 
