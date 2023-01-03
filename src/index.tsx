@@ -11,7 +11,7 @@ import BasalMetabolismForm from "./components/form/objects/BasalMetabolismForm/B
 import { setContext } from "@apollo/client/link/context";
 import { supabase } from "src/libs/foundation/supabase/client";
 import { supabaseUrl, supabaseAnonKey } from "libs/foundation/supabase/const";
-
+import { Index } from "src/router";
 const Main = () => {
   const httpLink = createHttpLink({
     uri: `${supabaseUrl}/graphql/v1`,
@@ -38,25 +38,22 @@ const Main = () => {
     cache: new InMemoryCache(),
   });
 
-  console.log("! " + supabaseUrl);
-
   return (
     <ApolloProvider client={apolloClient}>
-      <View style={styles.container}>
-        <BasalMetabolismForm />
-        <TodoList />
-      </View>
+      {/* <View style={styles.container}> */}
+      <Index />
+      {/* </View> */}
     </ApolloProvider>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  // container: {
+  //   // flex: 1,
+  //   // backgroundColor: "#fff",
+  //   // alignItems: "center",
+  //   // justifyContent: "center",
+  // },
 });
 
 export default Main;
