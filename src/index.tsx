@@ -8,17 +8,37 @@ import {
   InMemoryCache,
 } from "@apollo/client";
 import BasalMetabolismForm from "./components/form/objects/BasalMetabolismForm/BasalMetabolismForm";
+import { setContext } from "@apollo/client/link/context";
+import { supabase } from "src/libs/foundation/supabase/client";
+import { supabaseUrl, supabaseAnonKey } from "libs/foundation/supabase/const";
 
-import { supabaseUrl } from "libs/foundation/supabase/const";
 const Main = () => {
   const httpLink = createHttpLink({
     uri: `${supabaseUrl}/graphql/v1`,
   });
+
+  const authLink = setContext(async (_, { headers }) => {
+    // get the authentication token from local storage if it exists
+    const session = (await supabase.auth.getSession()).data.session;
+    // return the headers to the context so httpLink can read them
+    return {
+      headers: {
+        ...headers,
+        authorization: `Bearer ${
+          session ? session.access_token : supabaseAnonKey
+        }`,
+        apikey: supabaseAnonKey,
+      },
+    };
+  });
+
   const apolloClient = new ApolloClient({
     uri: `${supabaseUrl}/graphql/v1`,
-    link: httpLink,
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   });
+
+  console.log("! " + supabaseUrl);
 
   return (
     <ApolloProvider client={apolloClient}>

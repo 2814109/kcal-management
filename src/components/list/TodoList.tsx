@@ -18,6 +18,7 @@ export const TodoList = (): JSX.Element => {
     },
   });
 
+  console.log(queryData?.tasksCollection?.edges);
   // const [insertTask, { loading: mutationLoading }] = useMutation(taskInsert);
 
   // const [updateTask, { loading: updateLoading }] = useMutation(taskUpdate);
