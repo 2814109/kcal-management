@@ -59,7 +59,7 @@ export const TodoList = (): JSX.Element => {
 
   // const tasks = queryData!.tasksCollection!.edges;
 
-  return <Text>{JSON.stringify(queryData)}</Text>;
+  return <Text></Text>;
   // <div className="h-full flex flex-col">
   //   <div className="flex-grow min-h-0 overflow-y-auto">
   //     {tasks.map((task) => (
