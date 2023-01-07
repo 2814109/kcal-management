@@ -3,7 +3,7 @@ import { Radio, Text } from "native-base";
 export const SexRadioComponent = () => {
   return (
     <Radio.Group
-      defaultValue="1"
+      defaultValue="men"
       name="myRadioGroup"
       accessibilityLabel="Pick your favorite number"
     >
