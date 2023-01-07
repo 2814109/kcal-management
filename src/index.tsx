@@ -11,6 +11,9 @@ import { setContext } from "@apollo/client/link/context";
 import { supabase } from "src/libs/foundation/supabase/client";
 import { supabaseUrl, supabaseAnonKey } from "libs/foundation/supabase/const";
 import { Index } from "src/router";
+
+import { NativeBaseProvider, Box } from "native-base";
+
 const Main = () => {
   const httpLink = createHttpLink({
     uri: `${supabaseUrl}/graphql/v1`,
@@ -40,7 +43,10 @@ const Main = () => {
   return (
     <ApolloProvider client={apolloClient}>
       {/* <View style={styles.container}> */}
-      <Index />
+      <NativeBaseProvider>
+        <Index />
+      </NativeBaseProvider>
+
       {/* </View> */}
     </ApolloProvider>
   );

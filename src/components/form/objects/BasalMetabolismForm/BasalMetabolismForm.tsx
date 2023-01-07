@@ -11,6 +11,7 @@ import { InputComponent } from "../../items/InputComponent";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { validationSchema } from "./validationSchema";
 import { onSubmitBasalMetabolism } from "src/hooks/features/BasalMetabolismForm/action";
+import { SexRadioComponent } from "../../items/SexRadioComponent";
 const BasalMetabolismForm = () => {
   const { control, handleSubmit } = useForm<BasalMetabolism>({
     resolver: zodResolver(validationSchema),
@@ -23,7 +24,8 @@ const BasalMetabolismForm = () => {
 
   return (
     <View style={styles.container}>
-      <InputComponent
+      <SexRadioComponent />
+      {/* <InputComponent
         control={control as unknown as Control<FieldValues>}
         areaName="hightOfBody"
         label="性別"
@@ -32,7 +34,7 @@ const BasalMetabolismForm = () => {
         autoCapitalize="none"
         style={styles.input}
         keyboardType="numeric"
-      />
+      /> */}
       <InputComponent
         control={control as unknown as Control<FieldValues>}
         areaName="hightOfBody"
