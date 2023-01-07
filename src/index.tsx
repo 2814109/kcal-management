@@ -7,7 +7,6 @@ import {
   createHttpLink,
   InMemoryCache,
 } from "@apollo/client";
-import BasalMetabolismForm from "./components/form/objects/BasalMetabolismForm/BasalMetabolismForm";
 import { setContext } from "@apollo/client/link/context";
 import { supabase } from "src/libs/foundation/supabase/client";
 import { supabaseUrl, supabaseAnonKey } from "libs/foundation/supabase/const";

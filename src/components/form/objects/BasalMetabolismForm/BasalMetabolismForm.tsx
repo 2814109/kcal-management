@@ -26,6 +26,16 @@ const BasalMetabolismForm = () => {
       <InputComponent
         control={control as unknown as Control<FieldValues>}
         areaName="hightOfBody"
+        label="性別"
+        placeholder="性別"
+        autoCompleteType="sex"
+        autoCapitalize="none"
+        style={styles.input}
+        keyboardType="numeric"
+      />
+      <InputComponent
+        control={control as unknown as Control<FieldValues>}
+        areaName="hightOfBody"
         label="身長"
         placeholder="身長"
         autoCompleteType="hightOfBody"
@@ -46,10 +56,21 @@ const BasalMetabolismForm = () => {
 
       <InputComponent
         control={control as unknown as Control<FieldValues>}
-        areaName="age"
-        label="年齢"
-        placeholder="年齢"
-        autoCompleteType="age"
+        areaName="birthday"
+        label="生年月日"
+        placeholder="生年月日"
+        autoCompleteType="birthday"
+        autoCapitalize="none"
+        style={styles.input}
+        keyboardType="numeric"
+      />
+
+      <InputComponent
+        control={control as unknown as Control<FieldValues>}
+        areaName="physicalActivityLevel"
+        label="身体活動レベル"
+        placeholder="身体活動レベル"
+        autoCompleteType="physicalActivityLevel"
         autoCapitalize="none"
         style={styles.input}
         keyboardType="numeric"
@@ -67,7 +88,7 @@ const BasalMetabolismForm = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 100,
+    // marginHorizontal: 100,
     paddingTop: 22,
     width: "100%",
     padding: 32,
