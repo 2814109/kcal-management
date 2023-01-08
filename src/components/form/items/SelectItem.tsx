@@ -9,7 +9,7 @@ import {
 export const SelectItem = () => {
   return (
     <Center>
-      <FormControl w="3/4" maxW="300" isRequired isInvalid>
+      <FormControl isRequired>
         <FormControl.Label>Choose service</FormControl.Label>
         <Select
           minWidth="200"
@@ -26,17 +26,17 @@ export const SelectItem = () => {
             value="low"
           />
           <Select.Item
-            label="ホワイトワーカーであり、通勤や軽いスポーツを行う"
+            label="デスクワークであり、通勤や軽いスポーツを行う"
             value="middle"
           />
           <Select.Item
-            label="ブルーワーカーであり、休日にもスポーツを楽しむ"
+            label="よく身体を動かす仕事であり、休日にもスポーツを楽しむ"
             value="high"
           />
         </Select>
-        <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
+        {/* <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />}>
           Please make a selection!
-        </FormControl.ErrorMessage>
+        </FormControl.ErrorMessage> */}
       </FormControl>
     </Center>
   );

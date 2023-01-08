@@ -14,8 +14,7 @@ import { validationSchema } from "./validationSchema";
 import { onSubmitBasalMetabolism } from "src/hooks/features/BasalMetabolismForm/action";
 import { SexRadioComponent } from "../../items/SexRadioComponent";
 import { SelectItem } from "../../items/SelectItem";
-import DateTimePicker from "@react-native-community/datetimepicker";
-
+import { DatePickerItem } from "../../items/DatePickerItem";
 const BasalMetabolismForm = () => {
   const { control, handleSubmit } = useForm<BasalMetabolism>({
     resolver: zodResolver(validationSchema),
@@ -61,9 +60,9 @@ const BasalMetabolismForm = () => {
         keyboardType="numeric"
       />
 
-      <DateTimePicker value={new Date()} />
-
       <SelectItem />
+
+      <DatePickerItem />
 
       <Pressable
         style={styles.button}
